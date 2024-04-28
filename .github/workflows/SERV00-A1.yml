@@ -17,7 +17,6 @@ jobs:
           USER: ${{secrets.USER}}
           PASS: ${{secrets.PASS}}
         run: |
-          # echo "${PASS},${USER},${ADDR}"
-          sshpass -p "${PASS}" ssh "${USER}"@"${ADDR}" "df -h"
+          sshpass -p "$PASS" ssh "$USER"@"$ADDR" "df -h"
 
       
