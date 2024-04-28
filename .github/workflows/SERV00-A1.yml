@@ -13,7 +13,7 @@ jobs:
         
       - name: Remote SSH Commands
         run: |
-          sudo mkdir ~/.ssh/ && touch ~/.ssh/known_hosts
+          sudo mkdir ~/.ssh/ && sudo touch ~/.ssh/known_hosts
           sudo ssh-keyscan ${{secrets.SSH_ADDR_SERV00_A1}} > ~/.ssh/known_hosts
           sudo sshpass -p "${{secrets.SSH_PASS_SERV00_A1}}" ssh ${{secrets.SSH_USER_SERV00_A1}}@${{secrets.SSH_ADDR_SERV00_A1}} "df -h" 
 
