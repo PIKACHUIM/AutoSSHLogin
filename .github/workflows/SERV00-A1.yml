@@ -12,11 +12,7 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Remote SSH Commands
-        env: 
-          ADDR: ${{secrets.SSH_ADDR_SERV00_A1}}
-          USER: ${{secrets.SSH_USER_SERV00_A1}}
-          PASS: ${{secrets.SSH_PASS_SERV00_A1}}
         run: |
-          sshpass -p "$PASS" ssh "$USER"@"$ADDR" "df -h"
+          sshpass -p "${{secrets.SSH_PASS_SERV00_A1}}" ssh ${{secrets.SSH_USER_SERV00_A1}}@${{secrets.SSH_ADDR_SERV00_A1}} "df -h"
 
       
