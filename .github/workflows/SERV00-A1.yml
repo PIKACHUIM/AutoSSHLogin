@@ -6,15 +6,18 @@ on: [push]
 jobs:
   auto-ssh-login:
     runs-on: ubuntu-latest
+    environment: SERV00_A1
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
         
       - name: Remote SSH Commands
         env: 
-          SERV00_A1: ${{ secrets.SSH_PASS_SERV00_A1 }}
+          ADDR: ${{secrets.ADDR}}
+          USER: ${{secrets.USER}}
+          PASS: ${{secrets.PASS}}
         run: |
-          echo "user: ${SERV00_A1.SSH_PASS_SERV00_A1} pass: ${SERV00_A1.SSH_USER_SERV00_A1} addr: ${SERV00_A1.SSH_ADDR_SERV00_A1}"
-          sshpass -p "${SERV00_A1.SSH_PASS_SERV00_A1}" ssh ${SERV00_A1.SSH_USER_SERV00_A1}@${SERV00_A1.SSH_ADDR_SERV00_A1} "df -h"
+          echo "${PASS},${USER},${ADDR}"
+          sshpass -p "${PASS}" ssh "${USER}"@"${ADDR}" "df -h"
 
       
