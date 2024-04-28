@@ -4,6 +4,8 @@ name: Auto SSH Login
 on: 
   schedule:
     - cron:  '0 5 * * *' 
+  push:
+    branches: [ main ]
  
 jobs:
   auto-ssh-login:
