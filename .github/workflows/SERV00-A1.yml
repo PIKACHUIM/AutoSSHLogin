@@ -17,6 +17,7 @@ jobs:
           ADDR: ${{ secrets.SSH_ADDR_SERV00_A1 }}
         run: |
           echo ${PASS}${USER}${ADDR}
-          sshpass -p ${PASS} ssh ${USER}@${ADDR} "df -h"
+          ssh ${USER}@${ADDR} "df -h"
+          sshpass -p "${PASS}" ssh ${USER}@${ADDR} "df -h"
 
       
