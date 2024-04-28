@@ -12,6 +12,6 @@ jobs:
       - name: Remote SSH Commands
         run: |
           sudo apt-get install sshpass
-          sshpass -p "${{secrets.SSH_PASS_SERV00_A1}}" ${{secrets.SSH_USER_SERV00_A1}}@${{secrets.SSH_ADDR_SERV00_A1}} ls
+          sshpass -p "${{secrets.SSH_PASS_SERV00_A1}}" ${{secrets.SSH_USER_SERV00_A1}}@${{env.SSH_ADDR_SERV00_A1}} ls
 
       
