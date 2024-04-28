@@ -13,7 +13,8 @@ jobs:
         
       - name: Remote SSH Commands
         run: |
-          ssh ${{secrets.SSH_USER_SERV00_A1}}@${{secrets.SSH_ADDR_SERV00_A1}} "df -h" <<EOF yes EOF
-          sshpass -p "${{secrets.SSH_PASS_SERV00_A1}}" ssh ${{secrets.SSH_USER_SERV00_A1}}@${{secrets.SSH_ADDR_SERV00_A1}} "df -h"
+          sshpass -p "${{secrets.SSH_PASS_SERV00_A1}}" ssh ${{secrets.SSH_USER_SERV00_A1}}@${{secrets.SSH_ADDR_SERV00_A1}} "df -h" <<EOF
+          yes
+          EOF
 
       
