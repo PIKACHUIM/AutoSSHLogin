@@ -13,5 +13,8 @@ jobs:
         run: |
           apt-get install sshpass
           sshpass -p "${{secrets.SSH_PASS_SERV00-A1}}" ${{secrets.SSH_USER_SERV00-A1}}@${{SSH_ADDR_SERV00-A1}} "your-command-here"
+          pwd
+          ls .
+          
 
       
