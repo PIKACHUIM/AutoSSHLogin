@@ -1,0 +1,17 @@
+
+name: Auto SSH Login
+ 
+on: [push]
+ 
+jobs:
+  auto-ssh-login:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Remote SSH Commands
+        run: |
+          apt-get install sshpass
+          sshpass -p "${{secrets.SSH_PASS_SERV00-A1}}" ${{secrets.SSH_USER_SERV00-A1}}@${{SSH_ADDR_SERV00-A1}} "your-command-here"
+
+      
