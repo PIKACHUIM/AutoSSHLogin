@@ -22,5 +22,10 @@ jobs:
           mkdir ~/.ssh/ && touch ~/.ssh/known_hosts
           ssh-keyscan ${{secrets.SSH_ADDR_SERV00_A2}} > ~/.ssh/known_hosts
           sshpass -p "${{secrets.SSH_PASS_SERV00_A2}}" ssh ${{secrets.SSH_USER_SERV00_A2}}@${{secrets.SSH_ADDR_SERV00_A2}} "df -h" 
-
+          
+      - name: SSH Commands CT8-PL
+        run: |
+          mkdir ~/.ssh/ && touch ~/.ssh/known_hosts
+          ssh-keyscan ${{secrets.SSH_ADDR_CT8_PL_A1}} > ~/.ssh/known_hosts
+          sshpass -p "${{secrets.SSH_PASS_CT8_PL_A1}}" ssh ${{secrets.SSH_USER_CT8_PL_A1}}@${{secrets.SSH_ADDR_CT8_PL_A1}} "df -h" 
       
