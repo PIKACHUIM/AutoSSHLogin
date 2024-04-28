@@ -12,9 +12,9 @@ jobs:
         
       - name: Remote SSH Commands
         env: 
-          PASS: ${{ secrets.SSH_PASS_SERV00_A1 }},
-          USER: ${{ secrets.SSH_USER_SERV00_A1 }},
-          ADDR: ${{ secrets.SSH_ADDR_SERV00_A1 }},
+          PASS: ${{ secrets.SSH_PASS_SERV00_A1 }}
+          USER: ${{ secrets.SSH_USER_SERV00_A1 }}
+          ADDR: ${{ secrets.SSH_ADDR_SERV00_A1 }}
         run: |
           echo "${PASS} ${USER} ${ADDR}"
           # sshpass -p $PASS ssh $USER@$ADDR "df -h"
