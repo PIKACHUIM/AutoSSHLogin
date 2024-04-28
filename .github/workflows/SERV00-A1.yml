@@ -14,7 +14,7 @@ jobs:
         env: 
           SERV00_A1: ${{ secrets.SSH_PASS_SERV00_A1 }}
         run: |
-          echo ${SERV00_A1.SSH_PASS_SERV00_A1}${SERV00_A1.SSH_USER_SERV00_A1}${SERV00_A1.SSH_ADDR_SERV00_A1}
+          echo "user: ${SERV00_A1.SSH_PASS_SERV00_A1} pass: ${SERV00_A1.SSH_USER_SERV00_A1} addr: ${SERV00_A1.SSH_ADDR_SERV00_A1}"
           sshpass -p "${SERV00_A1.SSH_PASS_SERV00_A1}" ssh ${SERV00_A1.SSH_USER_SERV00_A1}@${SERV00_A1.SSH_ADDR_SERV00_A1} "df -h"
 
       
