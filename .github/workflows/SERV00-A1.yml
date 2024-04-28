@@ -10,11 +10,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
       - name: Remote SSH Commands
-        env: # Or as an environment variable
-          PASS: ${{ secrets.SSH_PASS_SERV00_A1 }}
-          USER: ${{ secrets.SSH_USER_SERV00_A1 }}
-          ADDR: ${{ secrets.SSH_ADDR_SERV00_A1 }}
+        env: 
+          PASS: ${{ secrets.SSH_PASS_SERV00_A1 }},
+          USER: ${{ secrets.SSH_USER_SERV00_A1 }},
+          ADDR: ${{ secrets.SSH_ADDR_SERV00_A1 }},
         run: |
-          sshpass -p "${{PASS}}" ssh ${{USER}}@${{ADDR}} "df -h"
+          sshpass -p "$PASS" ssh "$USER"@"$ADDR" "df -h"
 
       
