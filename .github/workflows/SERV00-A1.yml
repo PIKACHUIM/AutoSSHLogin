@@ -9,7 +9,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+        
       - name: Remote SSH Commands
+      - shell: bash
         env: 
           PASS: ${{ secrets.SSH_PASS_SERV00_A1 }},
           USER: ${{ secrets.SSH_USER_SERV00_A1 }},
