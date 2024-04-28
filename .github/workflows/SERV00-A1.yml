@@ -11,10 +11,16 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
         
-      - name: Remote SSH Commands
+      - name: SSH Commands SERV-1
         run: |
           mkdir ~/.ssh/ && touch ~/.ssh/known_hosts
           ssh-keyscan ${{secrets.SSH_ADDR_SERV00_A1}} > ~/.ssh/known_hosts
           sshpass -p "${{secrets.SSH_PASS_SERV00_A1}}" ssh ${{secrets.SSH_USER_SERV00_A1}}@${{secrets.SSH_ADDR_SERV00_A1}} "df -h" 
+          
+      - name: SSH Commands SERV-2
+        run: |
+          mkdir ~/.ssh/ && touch ~/.ssh/known_hosts
+          ssh-keyscan ${{secrets.SSH_ADDR_SERV00_A2}} > ~/.ssh/known_hosts
+          sshpass -p "${{secrets.SSH_PASS_SERV00_A2}}" ssh ${{secrets.SSH_USER_SERV00_A2}}@${{secrets.SSH_ADDR_SERV00_A2}} "df -h" 
 
       
